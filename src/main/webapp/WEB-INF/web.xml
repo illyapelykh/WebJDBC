@@ -14,4 +14,8 @@
         <servlet-name>Servlet</servlet-name>
         <url-pattern>/save</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Servlet</servlet-name>
+        <url-pattern>/try</url-pattern>
+    </servlet-mapping>
 </web-app>

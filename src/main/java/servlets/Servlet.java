@@ -15,7 +15,11 @@ public class Servlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String setnumber = request.getParameter("setnumber");
+        String result = request.getParameter("result");
         request.setAttribute("user", username);
+        request.setAttribute("number", setnumber);
+        request.setAttribute("result", result);
         request.getRequestDispatcher("/pages/welcome.jsp").forward(request, response);
 
     }
