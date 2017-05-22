@@ -24,6 +24,12 @@
     <input type="submit">
 </form>
 
+<c:forEach items="${users}" var="user">
+    <p>${user.id} ${user.name} ${user.password}</p>
+</c:forEach>
+
+<p/>
+
 
 ${result = String.valueOf(Math.random() * 32)}
 
