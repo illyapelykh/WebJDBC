@@ -18,11 +18,6 @@
     <input type="text" name="password">
     <input type="submit">
 </form>
-<h1>try to play a roulette, you pick ${number}</h1>
-<form action="/try" method="post">
-    <input type="text" name="setnumber">
-    <input type="submit">
-</form>
 
 <c:forEach items="${users}" var="user">
     <p>${user.id} ${user.name} ${user.password}</p>
@@ -30,19 +25,21 @@
 
 <p/>
 
+<h1>try to play a roulette, you pick ${number}</h1>
+<form action="/try" method="post">
+    <input type="text" name="setnumber">
+    <input type="submit">
+</form>
 
-${result = String.valueOf(Math.random() * 32)}
-
+<h1 hidden> ${ result = String.valueOf(Math.round(Math.random()*32))}</h1>
 
 <c:if test="${number == result}">
-    <c:out value="You are right"/>
-    <c:out value="Random was set as "/>
-    <h1>blala ${result}</h1>
+    <h2>RIGHT!!!</h2>
+    <h2>Put-up was ${result}</h2>
 </c:if>
-<c:if test="${number != result}">
-    <c:out value="You are not right"/>
-    <c:out value="Random was set as "/>
-    <h1>blala ${result}</h1>
+<c:if test="${number != result && number != null}">
+    <h2>SORRY!!!</h2>
+    <h2>Put-up was ${result}</h2>
 
 </c:if>
 </body>

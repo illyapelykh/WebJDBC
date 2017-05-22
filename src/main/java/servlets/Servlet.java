@@ -38,7 +38,8 @@ public class Servlet extends HttpServlet {
 
         request.setAttribute("user", username);
         request.setAttribute("number", setnumber);
-        request.setAttribute("result", result);
+        //request.setAttribute("result", result);
+
         request.getRequestDispatcher("/pages/welcome.jsp").forward(request, response);
 
     }
